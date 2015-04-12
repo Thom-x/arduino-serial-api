@@ -14,7 +14,7 @@ npm install arduino-serial-api --save
 var arduinoSerialAPI = require('arduino-serial-api');	// call arduino-api
 var API = arduinoSerialAPI();						// create our API
 API.connect(115200,function(rep){ 		    // connect to Arduino with baud rate at 115200
-	console.log(status);                    // get status : ["CONNECTING", "OPEN", "CLOSING", "CLOSED"]
+	console.log(rep.status);                    // get status : ["CONNECTING", "OPEN", "CLOSING", "CLOSED"]
 	if(rep.status === "OPEN")
 	{
 		API.send({
