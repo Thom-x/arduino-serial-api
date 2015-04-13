@@ -3,19 +3,22 @@
   "version": "0.0.3",
   "description": "Simple API to communicate with arduino using serial port",
   "main": "index.js",
-  "keywords" : ["arduino","api","serial"],
+  "keywords": [
+    "arduino",
+    "api",
+    "serial"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository" :
-  {
-    "type" : "git",
-    "url" : "https://github.com/Thom-x/arduino-serial-api.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Thom-x/arduino-serial-api.git"
   },
   "author": "MAUGIN Thomas",
   "license": "GPL-2.0",
   "dependencies": {
-    "util": "^0.10.3",
-    "serialport": "^1.6.3"
+    "request": "^2.55.0",
+    "util": "^0.10.3"
   }
 }

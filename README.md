@@ -3,6 +3,10 @@ Simple nodejs module to communicate with arduino using serial port.
 
 # Install
 
+run fr.thomas-maugin.arduino-1.0-SNAPSHOT.jar :
+```
+java -Xmx20m -jar fr.thomas-maugin.arduino-1.0-SNAPSHOT.jar
+```
 Then install the module :
 ```
 npm install arduino-serial-api --save
@@ -11,22 +15,22 @@ npm install arduino-serial-api --save
 # Usage
 
 ```javascript
-var arduinoSerialAPI = require('arduino-serial-api');	// call arduino-api
-var API = arduinoSerialAPI();						// create our API
-API.connect(115200,function(rep){ 		    // connect to Arduino with baud rate at 115200
-	console.log(rep.status);                    // get status : ["CONNECTING", "OPEN", "CLOSING", "CLOSED"]
-	if(rep.status === "OPEN")
-	{
-		API.send({
-		        led : {
-		            r : 255,
-		            g : 255,
-		            b : 255
-		        }
-		    },function(resp){
-		  console.log(resp);                 // log response
-		});
-	}
+var arduinoSerialAPI = require('arduino-serial-api');         // call arduino-api
+var API = arduinoSerialAPI();                                 // create our API
+API.connect(115200,'http://127.0.0.1:8080',function(rep){     // connect to Arduino with baud rate at 115200
+    console.log(rep.status);                                  // get status : ["OPEN", "CLOSED"]
+    if(rep.status === "OPEN")
+    {
+        API.send({
+                led : {
+                    "r" : 0,
+                    "g" : 0,
+                    "b" : 255
+                }
+            },function(resp){
+          console.log(resp);                                   // log response
+        });
+    }
 });
 ```
 
@@ -56,4 +60,4 @@ Callback function returning an object corresponding to the parsed json string of
 ### getState ()
 
 Return an object corresponding to the conneciton status.
-For example `{open: false, closed: true, connecting: false, closing: false}`.
+For example `{open: false, closed: true}`.
