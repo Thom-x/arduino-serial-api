@@ -1,6 +1,6 @@
 {
   "name": "arduino-serial-api",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple API to communicate with arduino using serial port",
   "main": "index.js",
   "keywords": [
