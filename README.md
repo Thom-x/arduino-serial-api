@@ -3,7 +3,11 @@ Simple nodejs module to communicate with arduino using serial port.
 
 # Install
 
-run fr.thomas-maugin.arduino-1.0-SNAPSHOT.jar :
+Build the following project https://github.com/Thom-x/java-arduino-serial :
+```
+mvn package
+```
+Run fr.thomas-maugin.arduino-1.0-SNAPSHOT.jar :
 ```
 java -Xmx20m -jar fr.thomas-maugin.arduino-1.0-SNAPSHOT.jar
 ```
